@@ -17,10 +17,15 @@ jobs:
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v2.9.1
 
+
     - name: Login to Docker Hub
       uses: docker/login-action@v2.2.0
       with:
-        registry: registry.cn-hangzhou.aliyuncs.com
-        username: 阿里云账号
-        password: 固定访问密码
-        logout: false 作者：全栈工程师修炼指南 https://www.bilibili.com/read/cv35192993/ 出处：bilibili
+        username: '周二蛋'
+        password: 'Zyy@201314'
+        logout: false
+        
+    - name: Use Skopeo Tools Sync Image to Docker Hub
+      run: |
+        #!/usr/bin/env bash
+        skopeo copy docker://docker.io/istio/examples-bookinfo-details-v1:1.16.4 docker://registry.cn-shanghai.aliyuncs.com/study-03/examples-bookinfo-details-v1:1.16.4
