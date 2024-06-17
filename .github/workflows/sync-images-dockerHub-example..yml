@@ -33,5 +33,5 @@ jobs:
     - name: Use Skopeo Tools Sync Image to Docker Hub
       run: |
         #!/usr/bin/env bash
-        skopeo copy docker.io/istio/examples-bookinfo-details-v1:1.16.4 registry.cn-shanghai.aliyuncs.com/study-03/examples-bookinfo-details-v1:1.16.4
+        skopeo copy docker://docker.io/istio/examples-bookinfo-details-v1:1.16.4 docker://registry.cn-shanghai.aliyuncs.com/study-03/examples-bookinfo-details-v1:1.16.4
  
